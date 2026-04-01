@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKR & SKR GCW(A) Kadapa – Activity Dashboard 2025-26</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0D1B4B;--royal:#1565C0;--sky:#1E88E5;--cyan:#00ACC1;
+  --teal:#00838F;--orange:#F57C00;--amber:#FFB300;--gold:#FDD835;
+  --green:#2E7D32;--lime:#43A047;--pink:#D81B60;--purple:#6A1B9A;
+  --red:#C62828;--white:#FFFFFF;--offwhite:#F0F4FF;
+  --muted:#546E7A;--border:#E3EAF8;--text:#1A237E;
+  --iqac:#7B1FA2;--iqac-light:#F3E5F5;--iqac-mid:#CE93D8;
+  --ext:#00695C;--ext-light:#E0F2F1;
+  --col:#1565C0;--col-light:#E3F2FD;
+  --shadow:0 4px 24px rgba(13,27,75,.12);
+  --shadow-lg:0 8px 40px rgba(13,27,75,.18);
+  --ff:'Segoe UI',Arial,sans-serif;
+}
+body{font-family:var(--ff);background:var(--offwhite);color:var(--text);min-height:100vh;overflow-x:hidden;}
+
+/* ── TICKER ── */
+.ticker-wrap{background:linear-gradient(90deg,var(--amber),#FF8F00,var(--amber));overflow:hidden;padding:7px 0;}
+.ticker-inner{display:flex;animation:ticker 60s linear infinite;white-space:nowrap;}
+.ticker-inner:hover{animation-play-state:paused;}
+.ticker-inner span{font-size:13px;font-weight:800;color:var(--navy);padding:0 44px;letter-spacing:.4px;}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,var(--navy) 0%,var(--royal) 55%,var(--sky) 100%);color:white;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,179,0,.15);}
+.header::after{content:'';position:absolute;bottom:-80px;left:30%;width:320px;height:320px;border-radius:50%;background:rgba(0,172,193,.10);}
+.header-inner{max-width:1400px;margin:0 auto;padding:18px 28px 15px;display:flex;align-items:center;gap:22px;position:relative;z-index:1;}
+.header-logo{width:72px;height:72px;background:rgba(255,255,255,.15);border:3px solid rgba(255,255,255,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0;}
+.header-text{flex:1;}
+.header-text .gov{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.8;}
+.header-text .college{font-size:24px;font-weight:900;line-height:1.1;margin:3px 0;}
+.header-text .subtitle{font-size:12px;opacity:.85;}
+.header-right{text-align:right;flex-shrink:0;}
+.aaa-badge{background:linear-gradient(135deg,var(--amber),var(--orange));color:var(--navy);font-weight:800;font-size:14px;padding:5px 18px;border-radius:30px;letter-spacing:1px;box-shadow:0 2px 12px rgba(255,179,0,.5);display:inline-block;margin-bottom:6px;}
+.header-principal{font-size:12px;opacity:.88;line-height:1.6;}
+.header-principal strong{color:var(--gold);}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#69F0AE;display:inline-block;margin-right:4px;animation:pulse 1.8s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+
+/* ── NAV ── */
+.nav-strip{background:var(--navy);border-bottom:3px solid var(--amber);}
+.nav-inner{max-width:1400px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-tab{padding:11px 16px;color:rgba(255,255,255,.55);cursor:pointer;white-space:nowrap;font-size:13px;font-weight:700;letter-spacing:.3px;border-bottom:3px solid transparent;margin-bottom:-3px;transition:all .2s;display:flex;align-items:center;gap:6px;text-transform:uppercase;user-select:none;}
+.nav-tab:hover{color:white;background:rgba(255,255,255,.06);}
+.nav-tab.active{color:var(--gold);border-bottom-color:var(--amber);background:rgba(253,216,53,.07);}
+
+/* ── MAIN ── */
+.main{max-width:1400px;margin:0 auto;padding:22px 22px 40px;}
+.tab-panel{display:none;animation:fadeIn .3s ease;}
+.tab-panel.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTION TITLES ── */
+.section-title{font-size:20px;font-weight:900;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:10px;padding-bottom:8px;border-bottom:3px solid var(--amber);}
+.section-title.iqac-title{color:var(--iqac);border-bottom-color:var(--iqac);}
+.section-title.ext-title{color:var(--ext);border-bottom-color:var(--ext);}
+
+/* ── STAT CARDS ── */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-bottom:22px;}
+.stat-card{background:#fff;border-radius:14px;padding:18px 14px 14px;box-shadow:var(--shadow);border-top:4px solid var(--royal);text-align:center;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;cursor:default;}
+.stat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.stat-icon{font-size:26px;margin-bottom:7px;display:block;}
+.stat-value{font-size:34px;font-weight:900;line-height:1;margin-bottom:4px;}
+.stat-label{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.4px;text-transform:uppercase;}
+.stat-sub{font-size:10px;color:var(--muted);margin-top:3px;}
+.c-blue{border-top-color:var(--royal)}.c-blue .stat-value{color:var(--royal)}
+.c-teal{border-top-color:var(--teal)}.c-teal .stat-value{color:var(--teal)}
+.c-orange{border-top-color:var(--orange)}.c-orange .stat-value{color:var(--orange)}
+.c-green{border-top-color:var(--green)}.c-green .stat-value{color:var(--green)}
+.c-purple{border-top-color:var(--purple)}.c-purple .stat-value{color:var(--purple)}
+.c-pink{border-top-color:var(--pink)}.c-pink .stat-value{color:var(--pink)}
+.c-amber{border-top-color:var(--amber)}.c-amber .stat-value{color:var(--orange)}
+.c-cyan{border-top-color:var(--cyan)}.c-cyan .stat-value{color:var(--cyan)}
+.c-navy{border-top-color:var(--navy)}.c-navy .stat-value{color:var(--navy)}
+.c-iqac{border-top-color:var(--iqac)}.c-iqac .stat-value{color:var(--iqac)}
+.c-ext{border-top-color:var(--ext)}.c-ext .stat-value{color:var(--ext)}
+
+/* ── GRIDS ── */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:22px;}
+.grid-12{display:grid;grid-template-columns:1fr 2fr;gap:18px;margin-bottom:22px;}
+@media(max-width:900px){.grid-2,.grid-3,.grid-12{grid-template-columns:1fr;}}
+
+/* ── CHART CARDS ── */
+.chart-card{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--shadow);}
+.chart-card h3{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.chart-card h3 .dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex-shrink:0;}
+canvas{display:block;}
+
+/* ── TABLES ── */
+.table-card{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--shadow);overflow-x:auto;margin-bottom:18px;}
+.table-card h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead tr{background:var(--navy);color:white;}
+thead.iqac-head tr{background:var(--iqac);}
+thead.ext-head tr{background:var(--ext);}
+thead th{padding:9px 11px;font-weight:700;text-align:left;font-size:12px;letter-spacing:.3px;}
+tbody tr{border-bottom:1px solid var(--border);transition:background .15s;}
+tbody tr:hover{background:#EEF3FF;}
+tbody.iqac-body tr:hover{background:var(--iqac-light);}
+tbody.ext-body tr:hover{background:var(--ext-light);}
+tbody td{padding:8px 11px;}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:800;}
+.badge-green{background:#E8F5E9;color:var(--green);}
+.badge-blue{background:#E3F2FD;color:var(--royal);}
+.badge-orange{background:#FFF3E0;color:var(--orange);}
+.badge-teal{background:#E0F7FA;color:var(--teal);}
+.badge-purple{background:#F3E5F5;color:var(--iqac);}
+.badge-ext{background:var(--ext-light);color:var(--ext);}
+
+/* ── PROGRESS BARS ── */
+.progress-list{display:flex;flex-direction:column;gap:11px;}
+.progress-header{display:flex;justify-content:space-between;margin-bottom:4px;}
+.progress-label{font-size:12px;font-weight:700;}
+.progress-val{font-size:12px;font-weight:800;}
+.progress-bar{height:9px;background:#E3EAF8;border-radius:5px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:5px;transition:width 1.2s cubic-bezier(.4,0,.2,1);width:0;}
+
+/* ── IQAC HIGHLIGHT SECTION ── */
+.iqac-hero{background:linear-gradient(135deg,var(--iqac) 0%,#9C27B0 60%,#CE93D8 100%);border-radius:18px;padding:24px;margin-bottom:22px;position:relative;overflow:hidden;color:white;box-shadow:0 8px 30px rgba(123,31,162,.35);}
+.iqac-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08);}
+.iqac-hero::after{content:'';position:absolute;bottom:-50px;left:20%;width:250px;height:250px;border-radius:50%;background:rgba(255,255,255,.06);}
+.iqac-hero-inner{position:relative;z-index:1;}
+.iqac-hero h2{font-size:22px;font-weight:900;margin-bottom:6px;display:flex;align-items:center;gap:10px;}
+.iqac-hero p{font-size:13px;opacity:.9;margin-bottom:16px;}
+.iqac-stats-row{display:flex;flex-wrap:wrap;gap:12px;}
+.iqac-mini-stat{background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border-radius:12px;padding:12px 18px;text-align:center;flex:1;min-width:100px;}
+.iqac-mini-stat .val{font-size:28px;font-weight:900;line-height:1;}
+.iqac-mini-stat .lbl{font-size:10px;font-weight:700;text-transform:uppercase;opacity:.85;margin-top:3px;}
+
+/* ── IQAC ACTIVITY CARDS ── */
+.iqac-cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:22px;}
+.iqac-act-card{background:#fff;border-radius:14px;padding:16px;box-shadow:var(--shadow);border-left:5px solid var(--iqac);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden;}
+.iqac-act-card::before{content:'IQAC';position:absolute;top:10px;right:10px;font-size:9px;font-weight:900;background:var(--iqac-light);color:var(--iqac);padding:2px 8px;border-radius:20px;letter-spacing:.5px;}
+.iqac-act-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+.iqac-act-card .act-date{font-size:11px;color:var(--iqac);font-weight:700;margin-bottom:5px;display:flex;align-items:center;gap:5px;}
+.iqac-act-card h4{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:6px;line-height:1.4;}
+.iqac-act-card .act-info{font-size:11.5px;color:var(--muted);line-height:1.5;}
+.iqac-act-card .act-participants{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--iqac);background:var(--iqac-light);padding:2px 8px;border-radius:10px;margin-top:6px;}
+
+/* ── EXTENSION ACTIVITY CARDS ── */
+.ext-hero{background:linear-gradient(135deg,var(--ext) 0%,#004D40 60%,#80CBC4 100%);border-radius:18px;padding:24px;margin-bottom:22px;position:relative;overflow:hidden;color:white;box-shadow:0 8px 30px rgba(0,105,92,.3);}
+.ext-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08);}
+.ext-hero-inner{position:relative;z-index:1;}
+.ext-hero h2{font-size:22px;font-weight:900;margin-bottom:6px;display:flex;align-items:center;gap:10px;}
+.ext-mini-stat{background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border-radius:12px;padding:12px 18px;text-align:center;flex:1;min-width:100px;}
+.ext-mini-stat .val{font-size:28px;font-weight:900;line-height:1;}
+.ext-mini-stat .lbl{font-size:10px;font-weight:700;text-transform:uppercase;opacity:.85;margin-top:3px;}
+
+/* ── TIMELINE ── */
+.timeline{display:flex;flex-direction:column;gap:0;margin-bottom:22px;position:relative;}
+.timeline::before{content:'';position:absolute;left:20px;top:10px;bottom:10px;width:3px;background:linear-gradient(to bottom,var(--iqac),var(--ext));border-radius:3px;}
+.tl-item{display:flex;gap:16px;padding:10px 0;align-items:flex-start;}
+.tl-dot{width:43px;height:43px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;z-index:1;box-shadow:0 2px 8px rgba(0,0,0,.2);}
+.tl-dot.iqac-dot{background:var(--iqac);color:white;}
+.tl-dot.col-dot{background:var(--royal);color:white;}
+.tl-dot.ext-dot{background:var(--ext);color:white;}
+.tl-content{background:#fff;border-radius:12px;padding:12px 15px;flex:1;box-shadow:0 2px 10px rgba(13,27,75,.08);transition:transform .2s;}
+.tl-content:hover{transform:translateX(4px);}
+.tl-content .tl-date{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:3px;}
+.tl-content h4{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:3px;}
+.tl-content p{font-size:12px;color:var(--muted);}
+
+/* ── CATEGORY PILLS ── */
+.cat-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.cat-pill{padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;border:2px solid transparent;}
+.cat-pill.active{box-shadow:0 2px 10px rgba(0,0,0,.15);}
+.cat-pill.all{background:#E3EAF8;color:var(--navy);}
+.cat-pill.all.active{background:var(--navy);color:white;}
+.cat-pill.iqac{background:var(--iqac-light);color:var(--iqac);}
+.cat-pill.iqac.active{background:var(--iqac);color:white;}
+.cat-pill.col{background:var(--col-light);color:var(--col);}
+.cat-pill.col.active{background:var(--col);color:white;}
+.cat-pill.ext{background:var(--ext-light);color:var(--ext);}
+.cat-pill.ext.active{background:var(--ext);color:white;}
+
+/* ── INFOGRAPHIC MONTH BAR ── */
+.month-bar-wrap{background:#fff;border-radius:14px;padding:18px;box-shadow:var(--shadow);margin-bottom:22px;overflow-x:auto;}
+.month-bar-wrap h3{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:14px;}
+.month-bars{display:flex;gap:6px;align-items:flex-end;min-width:600px;}
+.month-col{flex:1;text-align:center;}
+.month-col .bar-wrap{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:120px;}
+.month-col .bar{width:28px;border-radius:5px 5px 0 0;transition:height .8s cubic-bezier(.4,0,.2,1);min-height:4px;position:relative;}
+.month-col .bar:hover .bar-tip{display:block;}
+.bar-tip{display:none;position:absolute;top:-26px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;white-space:nowrap;z-index:10;}
+.month-col .month-lbl{font-size:10px;font-weight:700;color:var(--muted);margin-top:5px;}
+.month-col .month-val{font-size:11px;font-weight:900;margin-top:2px;}
+
+/* ── FOOTER ── */
+.footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;padding:14px 20px;font-size:12px;line-height:1.9;}
+.footer a{color:var(--amber);text-decoration:none;}
+.footer strong{color:var(--amber);}
+.footer .dev-line{margin-top:7px;padding-top:8px;border-top:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.75);font-size:12px;}
+.footer .dev-line strong{color:var(--amber);}
+
+/* ── SEARCH BOX ── */
+.search-box{position:relative;margin-bottom:16px;}
+.search-box input{width:100%;padding:10px 16px 10px 40px;border:2px solid var(--border);border-radius:10px;font-size:13px;outline:none;transition:border .2s;}
+.search-box input:focus{border-color:var(--royal);}
+.search-box i{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--muted);}
+
+/* ── LEGEND ── */
+.legend-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;}
+.legend-dot{width:12px;height:12px;border-radius:50%;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:#f0f4ff;}
+::-webkit-scrollbar-thumb{background:var(--royal);border-radius:4px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .header-inner{flex-wrap:wrap;}
+  .header-right{width:100%;text-align:left;}
+  .iqac-stats-row{gap:8px;}
+  .iqac-mini-stat,.ext-mini-stat{min-width:80px;padding:10px 12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-wrap"><div class="ticker-inner">
+  <span>🏛️ SKR &amp; SKR GCW(A) KADAPA — EMPOWERING WOMEN SINCE 1973</span>
+  <span>🏆 NAAC ACCREDITED · AUTONOMOUS SINCE 2016 · 7th RANK IN AP STATE · NIRF 2024-25</span>
+  <span>🎯 IQAC COORDINATOR: DR. C. V. KRISHNAVENI · 17 IQAC ACTIVITIES · 2025-26</span>
+  <span>📊 380+ COLLEGE ACTIVITIES · 50+ EXTENSION ACTIVITIES · ACADEMIC YEAR 2025-26</span>
+  <span>🌿 GREEN AUDIT CERTIFIED · 30 MoUs · 1,662 STUDENTS · 26,062 BOOKS</span>
+  <span>🏛️ SKR &amp; SKR GCW(A) KADAPA — EMPOWERING WOMEN SINCE 1973</span>
+  <span>🏆 NAAC ACCREDITED · AUTONOMOUS SINCE 2016 · 7th RANK IN AP STATE · NIRF 2024-25</span>
+  <span>🎯 IQAC COORDINATOR: DR. C. V. KRISHNAVENI · 17 IQAC ACTIVITIES · 2025-26</span>
+  <span>📊 380+ COLLEGE ACTIVITIES · 50+ EXTENSION ACTIVITIES · ACADEMIC YEAR 2025-26</span>
+  <span>🌿 GREEN AUDIT CERTIFIED · 30 MoUs · 1,662 STUDENTS · 26,062 BOOKS</span>
+</div></div>
+
+<!-- HEADER -->
+<div class="header"><div class="header-inner">
+  <div class="header-logo">🏛️</div>
+  <div class="header-text">
+    <div class="gov">Government of Andhra Pradesh · Commissionerate of Collegiate Education</div>
+    <div class="college">SKR &amp; SKR GOVT. COLLEGE FOR WOMEN (A), KADAPA</div>
+    <div class="subtitle">Autonomous Institution · Permanently Affiliated · NAAC Accredited · Est. 1973</div>
+  </div>
+  <div class="header-right">
+    <div class="aaa-badge">🎯 AAA 2025-26</div>
+    <div class="header-principal">Presented by <strong>Dr. V. Saleem Basha</strong><br>Principal · M.Sc., B.Ed., Ph.D.<br><span style="color:var(--gold)">skrgdcwakdp@gmail.com</span></div>
+    <div style="font-size:11px;opacity:.7;margin-top:3px;"><span class="live-dot"></span>Activity Dashboard · <span id="today-date"></span></div>
+  </div>
+</div></div>
+
+<!-- NAV -->
+<div class="nav-strip"><div class="nav-inner">
+  <div class="nav-tab active" onclick="showTab('overview',this)"><i class="fa fa-chart-pie"></i> Overview</div>
+  <div class="nav-tab" onclick="showTab('iqac',this)"><i class="fa fa-star"></i> IQAC Activities</div>
+  <div class="nav-tab" onclick="showTab('college',this)"><i class="fa fa-building-columns"></i> College Activities</div>
+  <div class="nav-tab" onclick="showTab('extension',this)"><i class="fa fa-globe"></i> Extension Activities</div>
+  <div class="nav-tab" onclick="showTab('insights',this)"><i class="fa fa-chart-bar"></i> Graphical Insights</div>
+  <div class="nav-tab" onclick="showTab('timeline',this)"><i class="fa fa-timeline"></i> Activity Timeline</div>
+</div></div>
+
+<!-- ═══════════════════ MAIN ═══════════════════ -->
+<div class="main">
+
+<!-- ══ OVERVIEW ══ -->
+<div class="tab-panel active" id="tab-overview">
+  <div class="section-title">📊 Dashboard Summary — Academic Year 2025-26</div>
+
+  <!-- Key Stats -->
+  <div class="stats-grid">
+    <div class="stat-card c-blue"><span class="stat-icon">📋</span><div class="stat-value" id="cnt-total">0</div><div class="stat-label">Total Activities</div><div class="stat-sub">College + IQAC + Extension</div></div>
+    <div class="stat-card c-iqac"><span class="stat-icon">⭐</span><div class="stat-value" id="cnt-iqac">0</div><div class="stat-label">IQAC Activities</div><div class="stat-sub">Organized / Coordinated</div></div>
+    <div class="stat-card c-blue"><span class="stat-icon">🏫</span><div class="stat-value" id="cnt-college">0</div><div class="stat-label">College Activities</div><div class="stat-sub">All Departments</div></div>
+    <div class="stat-card c-ext"><span class="stat-icon">🌍</span><div class="stat-value" id="cnt-ext">0</div><div class="stat-label">Extension Activities</div><div class="stat-sub">NSS, SASA, Health & more</div></div>
+    <div class="stat-card c-orange"><span class="stat-icon">👥</span><div class="stat-value">2000+</div><div class="stat-label">Total Participants</div><div class="stat-sub">Students & Faculty</div></div>
+    <div class="stat-card c-green"><span class="stat-icon">🤝</span><div class="stat-value">17</div><div class="stat-label">IQAC Programmes</div><div class="stat-sub">FDPs, Seminars, Workshops</div></div>
+    <div class="stat-card c-teal"><span class="stat-icon">🏛️</span><div class="stat-value">20+</div><div class="stat-label">Departments Active</div><div class="stat-sub">All disciplines</div></div>
+    <div class="stat-card c-purple"><span class="stat-icon">🎓</span><div class="stat-value">500+</div><div class="stat-label">SIP Participants</div><div class="stat-sub">Student Induction Programme</div></div>
+  </div>
+
+  <!-- Activity Category Distribution -->
+  <div class="grid-2">
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--iqac)"></span> Activity Distribution by Category</h3>
+      <canvas id="overviewDonut" height="220"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--royal)"></span> Month-wise Activity Count (2025-26)</h3>
+      <canvas id="monthBarChart" height="220"></canvas>
+    </div>
+  </div>
+
+  <!-- IQAC Spotlight -->
+  <div class="iqac-hero">
+    <div class="iqac-hero-inner">
+      <h2><i class="fa fa-star"></i> IQAC Spotlight — Internal Quality Assurance Cell</h2>
+      <p>Coordinated by <strong>Dr. C. V. Krishnaveni</strong> · All activities documented for audit verification · Academic Year 2025-26</p>
+      <div class="iqac-stats-row">
+        <div class="iqac-mini-stat"><div class="val">17</div><div class="lbl">Total Activities</div></div>
+        <div class="iqac-mini-stat"><div class="val">6</div><div class="lbl">FDPs / Workshops</div></div>
+        <div class="iqac-mini-stat"><div class="val">3</div><div class="lbl">National Seminars</div></div>
+        <div class="iqac-mini-stat"><div class="val">3</div><div class="lbl">Submissions (AADPI/ASAR/AISHE)</div></div>
+        <div class="iqac-mini-stat"><div class="val">250+</div><div class="lbl">FDP Participants</div></div>
+        <div class="iqac-mini-stat"><div class="val">500</div><div class="lbl">SIP Students</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress Indicators -->
+  <div class="grid-2">
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--green)"></span> Department Participation</h3>
+      <div class="progress-list">
+        <div><div class="progress-header"><span class="progress-label">NSS / Social Service</span><span class="progress-val" style="color:var(--royal)">38 activities</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--royal)" data-w="95"></div></div></div>
+        <div><div class="progress-header"><span class="progress-label">IQAC</span><span class="progress-val" style="color:var(--iqac)">17 activities</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--iqac)" data-w="45"></div></div></div>
+        <div><div class="progress-header"><span class="progress-label">Botany</span><span class="progress-val" style="color:var(--green)">35 activities</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--green)" data-w="88"></div></div></div>
+        <div><div class="progress-header"><span class="progress-label">Commerce</span><span class="progress-val" style="color:var(--orange)">28 activities</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--orange)" data-w="70"></div></div></div>
+        <div><div class="progress-header"><span class="progress-label">Physics / SASA</span><span class="progress-val" style="color:var(--teal)">42 activities</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--teal)" data-w="100"></div></div></div>
+        <div><div class="progress-header"><span class="progress-label">NCC</span><span class="progress-val" style="color:var(--cyan)">12 activities</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--cyan)" data-w="30"></div></div></div>
+        <div><div class="progress-header"><span class="progress-label">Computer Science</span><span class="progress-val" style="color:var(--purple)">22 activities</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--purple)" data-w="55"></div></div></div>
+        <div><div class="progress-header"><span class="progress-label">History</span><span class="progress-val" style="color:var(--red)">20 activities</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--red)" data-w="50"></div></div></div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--orange)"></span> Activity Type Breakdown</h3>
+      <canvas id="typeDonut" height="240"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ══ IQAC ACTIVITIES ══ -->
+<div class="tab-panel" id="tab-iqac">
+
+  <div class="iqac-hero">
+    <div class="iqac-hero-inner">
+      <h2><i class="fa fa-star"></i> IQAC Activity Register 2025-26</h2>
+      <p>Internal Quality Assurance Cell · Coordinated by <strong>Dr. C. V. Krishnaveni</strong>, Lecturer in Computer Science &amp; IQAC Coordinator</p>
+      <div class="iqac-stats-row">
+        <div class="iqac-mini-stat"><div class="val">17</div><div class="lbl">Total</div></div>
+        <div class="iqac-mini-stat"><div class="val">6</div><div class="lbl">FDPs</div></div>
+        <div class="iqac-mini-stat"><div class="val">3</div><div class="lbl">Seminars</div></div>
+        <div class="iqac-mini-stat"><div class="val">2</div><div class="lbl">Career Guidance</div></div>
+        <div class="iqac-mini-stat"><div class="val">3</div><div class="lbl">Submissions</div></div>
+        <div class="iqac-mini-stat"><div class="val">1</div><div class="lbl">SIP</div></div>
+        <div class="iqac-mini-stat"><div class="val">1</div><div class="lbl">Skill Training</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IQAC cards -->
+  <div class="section-title iqac-title"><i class="fa fa-clipboard-list"></i> All IQAC Activities</div>
+
+  <div class="iqac-cards-grid">
+    <div class="iqac-act-card">
+      <div class="act-date"><i class="fa fa-calendar-alt"></i> 24-06-2025</div>
+      <h4>Training Programme on Fostering Adaptability in the 21st Century Teaching Profession</h4>
+      <div class="act-info"><strong>Resource Person:</strong> Sri. G.L.N. Prasad, Lecturer in Zoology, Govt. Arts College, Anantapur</div>
+      <div class="act-participants"><i class="fa fa-users"></i> All Staff</div>
+    </div>
+    <div class="iqac-act-card">
+      <div class="act-date"><i class="fa fa-calendar-alt"></i> 08-07-2025</div>
+      <h4>National Level Workshop on Integrating AI Tools in Education</h4>
+      <div class="act-info"><strong>Resource Person:</strong> Dr. T. Samuel David Raj, Principal, Govt. Degree College, Porumamilla</div>
+      <div class="act-participants"><i class="fa fa-users"></i> Faculty &amp; Students</div>
+    </div>
+    <div class="iqac-act-card" style="border-left-color:var(--teal)">
+      <div class="act-date" style="color:var(--teal)"><i class="fa fa-calendar-alt"></i> July 2025</div>
+      <h4>AADPI 2024-25 College Submission</h4>
+      <div class="act-info">Annual Academic Data Portal of India submission completed for 2024-25</div>
+      <div class="act-participants" style="color:var(--teal);background:#E0F7FA"><i class="fa fa-building"></i> Institution Level</div>
+    </div>
+    <div class="iqac-act-card" style="border-left-color:var(--teal)">
+      <div class="act-date" style="color:var(--teal)"><i class="fa fa-calendar-alt"></i> July 2025</div>
+      <h4>ASAR 2024-25 College Submission</h4>
+      <div class="act-info">Annual Status Assessment Report submission for the academic year</div>
+      <div class="act-participants" style="color:var(--teal);background:#E0F7FA"><i class="fa fa-building"></i> Institution Level</div>
+    </div>
+    <div class="iqac-act-card" style="border-left-color:var(--teal)">
+      <div class="act-date" style="color:var(--teal)"><i class="fa fa-calendar-alt"></i> August 2025</div>
+      <h4>AISHE Submission</h4>
+      <div class="act-info">All India Survey on Higher Education data submission completed</div>
+      <div class="act-participants" style="color:var(--teal);background:#E0F7FA"><i class="fa fa-building"></i> Institution Level</div>
+    </div>
+    <div class="iqac-act-card">
+      <div class="act-date"><i class="fa fa-calendar-alt"></i> September 2025</div>
+      <h4>National Seminar on Intellectual Property Rights (IPR)</h4>
+      <div class="act-info"><strong>Resource:</strong> Lt Dr. G. Ranganatham (Central University of Karnataka); Dr. G. Rajasekhar, Govt. Arts College, Anantapur</div>
+      <div class="act-participants"><i class="fa fa-users"></i> Faculty &amp; Students</div>
+    </div>
+    <div class="iqac-act-card" style="border-left-color:var(--orange)">
+      <div class="act-date" style="color:var(--orange)"><i class="fa fa-calendar-alt"></i> October 2025 (5 Days, Virtual)</div>
+      <h4>5-Day National Level FDP on Integrating Indian Knowledge Systems (IKS) in Education and Sustainable Sciences</h4>
+      <div class="act-info"><strong>Resource:</strong> Dr. Sujatha (Rise Krishna Sai Prakasam Group), Dr. Shruthi R. Pandey (SIES Mumbai), Dr. E. Roshan Ara Begum, Dr. S. Rukmani, Dr. S. Sriranjani Mokshagundam</div>
+      <div class="act-participants"><i class="fa fa-users"></i> 250+</div>
+    </div>
+    <div class="iqac-act-card" style="border-left-color:var(--sky)">
+      <div class="act-date" style="color:var(--sky)"><i class="fa fa-calendar-alt"></i> 14-18 Oct 2025</div>
+      <h4>Students Induction Programme (SIP)</h4>
+      <div class="act-info"><strong>Incharge:</strong> Dr. K. Prakash Narayana Reddy &amp; Sri V. Kumar · <strong>Resource:</strong> Dr. V. Saleem Basha, Dr. G. Vijaya Lakshmi Devi, Dr. B. Swaroopa, Dr. G. Venkateswara Reddy, Dr. C.V. Krishnaveni</div>
+      <div class="act-participants"><i class="fa fa-users"></i> 500 Students</div>
+    </div>
+    <div class="iqac-act-card" style="border-left-color:var(--orange)">
+      <div class="act-date" style="color:var(--orange)"><i class="fa fa-calendar-alt"></i> 13-17 Oct 2025 (5 Days, Virtual)</div>
+      <h4>5-Day National Level FDP organized by IQAC &amp; ACT Academy</h4>
+      <div class="act-info"><strong>Resource Person:</strong> Dr. Sujatha Gaddam, Prof. CSE, Rise Krishna Sai Prakasam Group · Dept: Computer Science &amp; Applications</div>
+      <div class="act-participants"><i class="fa fa-users"></i> 250</div>
+    </div>
+    <div class="iqac-act-card">
+      <div class="act-date"><i class="fa fa-calendar-alt"></i> 12-11-2025</div>
+      <h4>IQAC Coordinator Participation in FDP Programme organized by CCE</h4>
+      <div class="act-info">Commissionerate of Collegiate Education faculty development programme participation</div>
+      <div class="act-participants"><i class="fa fa-user"></i> IQAC Coordinator</div>
+    </div>
+    <div class="iqac-act-card">
+      <div class="act-date"><i class="fa fa-calendar-alt"></i> November 2025</div>
+      <h4>A Journey towards Excellence — Understanding NIRF &amp; NAAC Frameworks</h4>
+      <div class="act-info"><strong>Chief Guest:</strong> Bellamkonda Raja Shekhar Garu, Vice-Chancellor, Yogi Vemana University · <strong>Guest of Honour:</strong> Dr. G. Ravindranath, RJDCE (FAC), Zone-IV, Kadapa</div>
+      <div class="act-participants"><i class="fa fa-users"></i> All Staff &amp; Students</div>
+    </div>
+    <div class="iqac-act-card">
+      <div class="act-date"><i class="fa fa-calendar-alt"></i> December 2025</div>
+      <h4>International Seminar (Hybrid Mode) on Mathematics, AI &amp; Shaping India's Economic Future</h4>
+      <div class="act-info"><strong>Resource:</strong> Prof. Srinivasa Rao Pentyala (IIT Dhanbad); Prof. Ramana Murthy M (Virginia State University, USA); Prof. C. Naga Raju (YSR Engineering College, YVU)</div>
+      <div class="act-participants"><i class="fa fa-users"></i> 200+</div>
+    </div>
+    <div class="iqac-act-card" style="border-left-color:var(--orange)">
+      <div class="act-date" style="color:var(--orange)"><i class="fa fa-calendar-alt"></i> 08-12 Dec 2025 (5 Days)</div>
+      <h4>FDP on Quantum Computing organized by IQAC with EXCEL R</h4>
+      <div class="act-info"><strong>Resource:</strong> EXCEL R Resource Persons · Joint organization with IQAC faculty</div>
+      <div class="act-participants"><i class="fa fa-users"></i> 300</div>
+    </div>
+    <div class="iqac-act-card">
+      <div class="act-date"><i class="fa fa-calendar-alt"></i> 29-12-2025</div>
+      <h4>Career Guidance and Resume Building</h4>
+      <div class="act-info"><strong>Resource Person:</strong> Axis Point, (Govt. Degree College, Vempalli)</div>
+      <div class="act-participants"><i class="fa fa-users"></i> 110</div>
+    </div>
+    <div class="iqac-act-card">
+      <div class="act-date"><i class="fa fa-calendar-alt"></i> 29-12-2025</div>
+      <h4>Conference on Career Guidance</h4>
+      <div class="act-info"><strong>Convener:</strong> Dr. C.V. Krishnaveni &amp; Dr. Guru Mohan Reddy · <strong>Resource:</strong> A. Suresh Kumar, M.Tech</div>
+      <div class="act-participants"><i class="fa fa-users"></i> 250</div>
+    </div>
+    <div class="iqac-act-card" style="border-left-color:var(--green)">
+      <div class="act-date" style="color:var(--green)"><i class="fa fa-calendar-alt"></i> 03-01-2026</div>
+      <h4>Skill Training on Tailoring (PM USHA)</h4>
+      <div class="act-info"><strong>Resource Person:</strong> Axis Point, Govt. Degree College, Vempalli · PM USHA funded initiative</div>
+      <div class="act-participants"><i class="fa fa-users"></i> 100</div>
+    </div>
+    <div class="iqac-act-card">
+      <div class="act-date"><i class="fa fa-calendar-alt"></i> 06-02-2026</div>
+      <h4>Gen AI Tools and Prompt Engineering (PM USHA)</h4>
+      <div class="act-info"><strong>Resource Person:</strong> ExcelR, Govt. Degree College, Vempalli · Valedictory Session: K. Tejeswar Subhash Changra Bose</div>
+      <div class="act-participants"><i class="fa fa-users"></i> 120</div>
+    </div>
+  </div>
+
+  <!-- IQAC Full Table -->
+  <div class="table-card">
+    <h3><i class="fa fa-table" style="color:var(--iqac)"></i> IQAC Activity Register — Complete Record</h3>
+    <table>
+      <thead class="iqac-head"><tr>
+        <th>S.No</th><th>Date</th><th>Activity / Title</th><th>Convener</th><th>Resource Person</th><th>Participants</th>
+      </tr></thead>
+      <tbody class="iqac-body">
+        <tr><td>1</td><td>24-06-2025</td><td><strong>Training Programme — Fostering Adaptability in 21st Century Teaching</strong></td><td>Dr. C. V. Krishnaveni</td><td>Sri. G.L.N. Prasad, Lect. in Zoology, Govt. Arts College, Anantapur</td><td><span class="badge badge-purple">All Staff</span></td></tr>
+        <tr><td>2</td><td>08-07-2025</td><td><strong>National Level Workshop on Integrating AI Tools in Education</strong></td><td>Dr. C. V. Krishnaveni</td><td>Dr. T. Samuel David Raj, Principal, GDC, Porumamilla</td><td><span class="badge badge-purple">Faculty &amp; Students</span></td></tr>
+        <tr><td>3</td><td>July 2025</td><td><strong>AADPI 2024-25 College Submission</strong></td><td>Dr. C. V. Krishnaveni</td><td>—</td><td><span class="badge badge-teal">Institution Level</span></td></tr>
+        <tr><td>4</td><td>July 2025</td><td><strong>ASAR 2024-25 College Submission</strong></td><td>Dr. C. V. Krishnaveni</td><td>—</td><td><span class="badge badge-teal">Institution Level</span></td></tr>
+        <tr><td>5</td><td>August 2025</td><td><strong>AISHE Submission</strong></td><td>Dr. C. V. Krishnaveni</td><td>—</td><td><span class="badge badge-teal">Institution Level</span></td></tr>
+        <tr><td>6</td><td>September 2025</td><td><strong>National Seminar on Intellectual Property Rights (IPR)</strong></td><td>Dr. C. V. Krishnaveni</td><td>Lt Dr. G. Ranganatham; Dr. G. Rajasekhar</td><td><span class="badge badge-purple">Faculty &amp; Students</span></td></tr>
+        <tr><td>7</td><td>Oct 2025 (5-Day, Virtual)</td><td><strong>National Level FDP on Integrating IKS in Education &amp; Sustainable Sciences</strong></td><td>Dr. C. V. Krishnaveni</td><td>Dr. Sujatha, Dr. Shruthi R. Pandey (SIES Mumbai), Dr. E. Roshan Ara Begum, Dr. S. Rukmani, Dr. S. Sriranjani Mokshagundam</td><td><span class="badge badge-purple">250+</span></td></tr>
+        <tr><td>8</td><td>14-18 Oct 2025</td><td><strong>Students Induction Programme (SIP)</strong> <span class="badge badge-blue">SIP Committee</span></td><td>Dr. K. Prakash Narayana Reddy &amp; Sri V. Kumar</td><td>Dr. V. Saleem Basha, Dr. G. Vijaya Lakshmi Devi, Dr. B. Swaroopa, Dr. G. Venkateswara Reddy, Dr. C.V. Krishnaveni</td><td><span class="badge badge-green">500</span></td></tr>
+        <tr><td>9</td><td>13-17 Oct 2025 (5-Day, Virtual)</td><td><strong>5-Day National Level FDP by IQAC &amp; ACT Academy</strong> — CS &amp; Applications Dept.</td><td>Dr. C. V. Krishnaveni &amp; Faculty</td><td>Dr. Sujatha Gaddam, Prof. CSE, Rise Krishna Sai Prakasam Group</td><td><span class="badge badge-purple">250</span></td></tr>
+        <tr><td>10</td><td>12-11-2025</td><td><strong>IQAC Coordinator Participation in FDP by CCE</strong></td><td>Dr. C. V. Krishnaveni</td><td>CCE Faculty</td><td><span class="badge badge-teal">IQAC Coordinator</span></td></tr>
+        <tr><td>11</td><td>November 2025</td><td><strong>A Journey towards Excellence — Understanding NIRF &amp; NAAC Frameworks</strong></td><td>Dr. C. V. Krishnaveni</td><td>Bellamkonda Raja Shekhar Garu, V-C YVU (Chief Guest); Dr. G. Ravindranath, RJDCE (FAC), Zone-IV, Kadapa</td><td><span class="badge badge-purple">All Staff &amp; Students</span></td></tr>
+        <tr><td>12</td><td>December 2025</td><td><strong>International Seminar (Hybrid) — Mathematics, AI &amp; Shaping India's Economic Future</strong></td><td>Dr. C. V. Krishnaveni</td><td>Prof. Srinivasa Rao Pentyala (IIT Dhanbad); Prof. Ramana Murthy M (Virginia State, USA); Prof. C. Naga Raju (YVU)</td><td><span class="badge badge-purple">200+</span></td></tr>
+        <tr><td>13</td><td>08-12 Dec 2025</td><td><strong>FDP on Quantum Computing by IQAC with EXCEL R</strong></td><td>Dr. C. V. Krishnaveni &amp; Faculty</td><td>EXCEL R Resource Persons</td><td><span class="badge badge-green">300</span></td></tr>
+        <tr><td>14</td><td>29-12-2025</td><td><strong>Career Guidance and Resume Building</strong></td><td>Dr. C. V. Krishnaveni &amp; Faculty</td><td>Axis Point, GDC Vempalli</td><td><span class="badge badge-purple">110</span></td></tr>
+        <tr><td>15</td><td>29-12-2025</td><td><strong>Conference on Career Guidance</strong> <span class="badge badge-orange">IQAC &amp; CGC</span></td><td>Dr. C.V. Krishnaveni &amp; Dr. Guru Mohan Reddy</td><td>A. Suresh Kumar, M.Tech</td><td><span class="badge badge-green">250</span></td></tr>
+        <tr><td>16</td><td>03-01-2026</td><td><strong>Skill Training on Tailoring</strong> <span class="badge badge-green">PM USHA</span></td><td>Dr. C. V. Krishnaveni &amp; Faculty</td><td>Axis Point, GDC Vempalli</td><td><span class="badge badge-purple">100</span></td></tr>
+        <tr><td>17</td><td>06-02-2026</td><td><strong>Gen AI Tools and Prompt Engineering</strong> <span class="badge badge-green">PM USHA</span></td><td>Dr. C. V. Krishnaveni &amp; Faculty</td><td>ExcelR, GDC Vempalli</td><td><span class="badge badge-purple">120</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══ COLLEGE ACTIVITIES ══ -->
+<div class="tab-panel" id="tab-college">
+  <div class="section-title"><i class="fa fa-building-columns"></i> College Activity Register 2025-26</div>
+
+  <div class="stats-grid" style="margin-bottom:16px;">
+    <div class="stat-card c-blue"><span class="stat-icon">📋</span><div class="stat-value">380+</div><div class="stat-label">Total Entries</div></div>
+    <div class="stat-card c-green"><span class="stat-icon">🏛️</span><div class="stat-value">20+</div><div class="stat-label">Departments</div></div>
+    <div class="stat-card c-orange"><span class="stat-icon">📅</span><div class="stat-value">Jun–Mar</div><div class="stat-label">Period Covered</div></div>
+    <div class="stat-card c-teal"><span class="stat-icon">🤝</span><div class="stat-value">50+</div><div class="stat-label">Guest Lecturers</div></div>
+  </div>
+
+  <div class="search-box">
+    <i class="fa fa-search"></i>
+    <input type="text" id="colSearch" placeholder="Search college activities by title, department or date..." onkeyup="filterColTable()">
+  </div>
+
+  <div class="cat-pills">
+    <span class="cat-pill all active" onclick="filterCol('all',this)">All</span>
+    <span class="cat-pill col" onclick="filterCol('NSS',this)">NSS</span>
+    <span class="cat-pill col" onclick="filterCol('NCC',this)">NCC</span>
+    <span class="cat-pill col" onclick="filterCol('Botany',this)">Botany</span>
+    <span class="cat-pill col" onclick="filterCol('Commerce',this)">Commerce</span>
+    <span class="cat-pill col" onclick="filterCol('Physics',this)">Physics</span>
+    <span class="cat-pill col" onclick="filterCol('Computer Science',this)">Computer Science</span>
+    <span class="cat-pill col" onclick="filterCol('History',this)">History</span>
+    <span class="cat-pill col" onclick="filterCol('Chemistry',this)">Chemistry</span>
+    <span class="cat-pill col" onclick="filterCol('Economics',this)">Economics</span>
+    <span class="cat-pill iqac" onclick="filterCol('IQAC',this)">IQAC</span>
+  </div>
+
+  <div class="table-card">
+    <h3><i class="fa fa-list" style="color:var(--royal)"></i> Selected College Activities (Key Highlights)</h3>
+    <table id="colTable">
+      <thead><tr><th>S.No</th><th>Date</th><th>Activity</th><th>Department</th><th>Staff Incharge</th><th>Resource Person</th><th>Participants</th></tr></thead>
+      <tbody id="colBody">
+        <tr data-cat="Chemistry"><td>1</td><td>25-05-2025</td><td>One Day Seminar on Drug Free India</td><td><span class="badge badge-orange">Chemistry</span></td><td>Dr. K. Naga Muni Reddy</td><td>G.L.N Prasad</td><td>66</td></tr>
+        <tr data-cat="NSS"><td>2</td><td>21-06-2025</td><td>International Yoga Day Celebrations</td><td><span class="badge badge-green">NSS</span></td><td>Dr. Sachi Devi P</td><td>K. Madan Mohan</td><td>100</td></tr>
+        <tr data-cat="IQAC"><td>3</td><td>24-06-2025</td><td>Training Programme on Fostering Adaptability in 21st Century Teaching</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>Sri. G.L.N. Prasad, GDC Anantapur</td><td>All Faculty</td></tr>
+        <tr data-cat="NSS"><td>4</td><td>26-06-2025</td><td>Pledge &amp; Rally — Anti Drug Abuse and Illicit Trafficking</td><td><span class="badge badge-green">NSS</span></td><td>Dr. Sachi Devi P</td><td>Staff &amp; Students</td><td>100</td></tr>
+        <tr data-cat="IQAC"><td>5</td><td>08-07-2025</td><td>National Level Workshop on Integrating AI Tools in Education</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>Dr. T. Samuel David Raj, GDC Porumamilla</td><td>All Faculty</td></tr>
+        <tr data-cat="NSS"><td>6</td><td>11-07-2025</td><td>Awareness Rally on Voter Enrollment</td><td><span class="badge badge-green">NSS</span></td><td>Dr. P. Sachi Devi</td><td>—</td><td>50</td></tr>
+        <tr data-cat="Economics"><td>7</td><td>11-07-2025</td><td>World Population Day</td><td><span class="badge badge-teal">Economics</span></td><td>Dr. G. Vijaya Lakshmi Devi</td><td>Dr. V. Saleem Basha, Principal</td><td>50</td></tr>
+        <tr data-cat="Computer Science"><td>8</td><td>18-06-2025</td><td>One Day Workshop on Deep Tech Cyber Security Fundamentals</td><td><span class="badge badge-blue">Comp. Science</span></td><td>A. Haritha</td><td>Dr. M. Sandhya Rani; Dr. D. J. Samatha</td><td>120</td></tr>
+        <tr data-cat="Botany"><td>9</td><td>18-08-2025</td><td>Tree Planting Drive</td><td><span class="badge badge-green">Botany</span></td><td>Dr. P. Subramanyam</td><td>Dr. V. Saleem Basha, Principal</td><td>40</td></tr>
+        <tr data-cat="NSS"><td>10</td><td>13-08-2025</td><td>Har Ghar Tiranga Rally</td><td><span class="badge badge-green">NSS</span></td><td>Dr. Sachi Devi P</td><td>Dr. V. Saleem Basha, Principal</td><td>100</td></tr>
+        <tr data-cat="NCC"><td>11</td><td>15-08-2025</td><td>Independence Day Parade at Police Grounds, Kadapa</td><td><span class="badge badge-orange">NCC</span></td><td>B. Swaroopa</td><td>—</td><td>28</td></tr>
+        <tr data-cat="IQAC"><td>12</td><td>Sep 2025</td><td>National Seminar on Intellectual Property Rights (IPR)</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>Lt Dr. G. Ranganatham; Dr. G. Rajasekhar</td><td>All Faculty</td></tr>
+        <tr data-cat="Chemistry"><td>13</td><td>16-09-2025</td><td>International Ozone Day Celebrations (Quiz, Poster, Prize Distribution)</td><td><span class="badge badge-orange">Chemistry</span></td><td>Dr. K. Naga Muni Reddy</td><td>—</td><td>50</td></tr>
+        <tr data-cat="Commerce"><td>14</td><td>06-10-2025</td><td>GST 2.0 — Super GST, Super Savings</td><td><span class="badge badge-blue">Commerce</span></td><td>O. Khaja Mohideen</td><td>Sri Leeladhar Sandaluru, GST Inspector, Trichy</td><td>75</td></tr>
+        <tr data-cat="IQAC"><td>15</td><td>13-17 Oct 2025</td><td>5-Day National Level FDP (Virtual) by IQAC &amp; ACT Academy</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>Dr. Sujatha Gaddam, Rise Krishna Sai Prakasam</td><td>250</td></tr>
+        <tr data-cat="Physics"><td>16</td><td>18-10-2025</td><td>SASA — Clean Air Programme</td><td><span class="badge badge-teal">Physics/SASA</span></td><td>Dr. L. Raja Mohan Reddy</td><td>Dr. V. Saleem Basha, Principal</td><td>—</td></tr>
+        <tr data-cat="Commerce"><td>17</td><td>31-10-2025</td><td>Rashtriya Ekta Diwas</td><td><span class="badge badge-blue">Commerce</span></td><td>O. Khaja Mohideen</td><td>Sri G. Rajesh, Indian Postal Service</td><td>75</td></tr>
+        <tr data-cat="Commerce"><td>18</td><td>02-11-2025</td><td>Vigilance Awareness Programme</td><td><span class="badge badge-blue">Commerce</span></td><td>Commerce Faculty</td><td>Sri. G. Rajesh, Indian Postal Service</td><td>120</td></tr>
+        <tr data-cat="History"><td>19</td><td>03-11-2025</td><td>Field Trip to C.P. Brown Library</td><td><span class="badge badge-orange">History</span></td><td>Dr. M. Guru Mohan Reddy</td><td>Dr. V. Saleem Basha, Principal</td><td>40</td></tr>
+        <tr data-cat="IQAC"><td>20</td><td>November 2025</td><td>Journey towards Excellence — Understanding NIRF &amp; NAAC Frameworks</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>Bellamkonda Raja Shekhar Garu (VC, YVU)</td><td>All Staff &amp; Students</td></tr>
+        <tr data-cat="Computer Science"><td>21</td><td>24-11-2025</td><td>Faculty Forum on AI Usage in Education</td><td><span class="badge badge-blue">Comp. Science</span></td><td>Dr. C. V. Krishnaveni</td><td>Dr. C. V. Krishnaveni</td><td>60</td></tr>
+        <tr data-cat="IQAC"><td>22</td><td>08-12 Dec 2025</td><td>FDP on Quantum Computing organized by IQAC with EXCEL R</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>EXCEL R Resource Persons</td><td>300</td></tr>
+        <tr data-cat="IQAC"><td>23</td><td>December 2025</td><td>International Seminar (Hybrid) on Mathematics, AI &amp; India's Economic Future</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>Prof. Srinivasa Rao Pentyala (IIT Dhanbad); Prof. Ramana Murthy M (Virginia State, USA)</td><td>200+</td></tr>
+        <tr data-cat="Commerce"><td>24</td><td>22-12-2025</td><td>National Mathematics Day</td><td><span class="badge badge-blue">Mathematics</span></td><td>Dr. B. Swaroopa</td><td>Dr. V. Saleem Basha, Principal</td><td>50</td></tr>
+        <tr data-cat="IQAC"><td>25</td><td>23-12-2025</td><td>One Day Academic Workshop (NIRF &amp; NAAC) <span class="badge badge-purple">IQAC</span></td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>Hon. Prof. Bellamkonda Raja Sekhar Garu, VC, YVU</td><td>All Faculty</td></tr>
+        <tr data-cat="IQAC"><td>26</td><td>29-12-2025</td><td>Career Guidance and Resume Building</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>Axis Point, GDC Vempalli</td><td>110</td></tr>
+        <tr data-cat="IQAC"><td>27</td><td>03-01-2026</td><td>PM USHA — Skill Training on Tailoring</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>Axis Point, GDC Vempalli</td><td>100</td></tr>
+        <tr data-cat="IQAC"><td>28</td><td>20-01-2026</td><td>PM USHA — Artificial Intelligence and Prompt Engineering (Inaugural)</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>K. Tejeswar Subhash Changra Bose</td><td>150</td></tr>
+        <tr data-cat="IQAC"><td>29</td><td>06-02-2026</td><td>PM USHA — Gen AI Tools and Prompt Engineering (Valedictory)</td><td><span class="badge badge-purple">IQAC</span></td><td>Dr. C. V. Krishnaveni</td><td>K. Tejeswar Subhash Changra Bose</td><td>150</td></tr>
+        <tr data-cat="Commerce"><td>30</td><td>28-02-2026</td><td>Financial Literacy Training Programme (CCE &amp; AMFI &amp; IIM Visakhapatnam)</td><td><span class="badge badge-blue">Commerce</span></td><td>Commerce Faculty</td><td>O. Khaja Mohideen et al.</td><td>405</td></tr>
+        <tr data-cat="History"><td>31</td><td>04-03-2026</td><td>International Seminar on Mathematics &amp; AI — Shaping India's Economic Future</td><td><span class="badge badge-orange">History &amp; Maths</span></td><td>Dr. P. Gurivi Reddy, Dr. M. Guru Mohan Reddy</td><td>—</td><td>100</td></tr>
+        <tr data-cat="Computer Science"><td>32</td><td>12-03-2026</td><td>Admission Campaign at Narayana Jr. College, Hari Towers</td><td><span class="badge badge-blue">Comp. Science</span></td><td>A. Haritha, Dr. C. V. Krishnaveni &amp; Staff</td><td>All Staff</td><td>80</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══ EXTENSION ACTIVITIES ══ -->
+<div class="tab-panel" id="tab-extension">
+
+  <div class="ext-hero">
+    <div class="ext-hero-inner">
+      <h2><i class="fa fa-globe"></i> Extension Activities 2025-26</h2>
+      <p>Community outreach through NSS, SASA, Health &amp; Medical awareness, Tree Planting, Voter Awareness and Social Service programmes</p>
+      <div class="iqac-stats-row">
+        <div class="ext-mini-stat"><div class="val">50+</div><div class="lbl">Total Activities</div></div>
+        <div class="ext-mini-stat"><div class="val">8</div><div class="lbl">Health &amp; Medical</div></div>
+        <div class="ext-mini-stat"><div class="val">21</div><div class="lbl">SASA Programmes</div></div>
+        <div class="ext-mini-stat"><div class="val">3</div><div class="lbl">Voter Awareness</div></div>
+        <div class="ext-mini-stat"><div class="val">1</div><div class="lbl">Old Age Home Visit</div></div>
+        <div class="ext-mini-stat"><div class="val">1</div><div class="lbl">Tree Planting</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title ext-title"><i class="fa fa-heartbeat"></i> Health &amp; Medical Activities</div>
+  <div class="table-card">
+    <table>
+      <thead class="ext-head"><tr><th>S.No</th><th>Date</th><th>Activity</th><th>Department</th><th>Incharge</th><th>Resource Person</th><th>Participants</th><th>Remarks</th></tr></thead>
+      <tbody class="ext-body">
+        <tr><td>1</td><td>11-02-2025</td><td>Awareness on Primary Health Care &amp; AIDS</td><td>NSS</td><td>Dr. P. Sachi Devi</td><td>—</td><td><span class="badge badge-ext">50</span></td><td>Excellent</td></tr>
+        <tr><td>2</td><td>21-05-2025</td><td>11th International Yoga Day 2025 — Yoga for One Earth One Health</td><td>Commerce</td><td>College Campus</td><td>All Faculty Members</td><td><span class="badge badge-ext">60</span></td><td>Excellent</td></tr>
+        <tr><td>3</td><td>23-09-2025</td><td>Ayurveda for People &amp; Planet — Health Camp</td><td>Botany</td><td>Dr. P. Subramanyam</td><td>Dr. Hussain, Homeo Hospital, Kadapa</td><td><span class="badge badge-ext">40</span></td><td>Excellent</td></tr>
+        <tr><td>4</td><td>19-11-2025</td><td>Counselling Related to Mental Health for Students</td><td>Career Guidance Cell</td><td>Dr. M. Guru Mohan Reddy</td><td>O. V. Reddy</td><td><span class="badge badge-ext">200</span></td><td>Good</td></tr>
+        <tr><td>5</td><td>29-01-2026</td><td>Mental Health and Well Being Awareness Program</td><td>Dept. of Botany</td><td>Dr. Y. Nagarathnamma</td><td>Dr. O. V. Reddy, Psychiatrist, Kadapa</td><td><span class="badge badge-ext">40</span></td><td>Good</td></tr>
+        <tr><td>6</td><td>13-02-2026</td><td>DBT International Conference on Advances in Biotechnology (with 50 students)</td><td>Zoology</td><td>Dr. P. Sachi Devi</td><td>—</td><td><span class="badge badge-ext">50</span></td><td>Good</td></tr>
+        <tr><td>7</td><td>20-02-2026</td><td>Health and Well Being</td><td>Economics</td><td>Dr. G. Vijaya Lakshmi Devi</td><td>Dr. Venkata Ramudu</td><td><span class="badge badge-ext">70</span></td><td>—</td></tr>
+        <tr><td>8</td><td>06-03-2026</td><td>JAM Session on Favourite Food — Health Benefits</td><td>Bio-Technology</td><td>Dr. P. Sachi Devi</td><td>S. Siva Gowri</td><td><span class="badge badge-ext">22</span></td><td>Excellent</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title ext-title"><i class="fa fa-leaf"></i> Tree Planting &amp; Environmental Activities</div>
+  <div class="table-card">
+    <table>
+      <thead class="ext-head"><tr><th>S.No</th><th>Date</th><th>Activity</th><th>Department</th><th>Incharge</th><th>Resource Person</th><th>Participants</th></tr></thead>
+      <tbody class="ext-body">
+        <tr><td>1</td><td>18-08-2025</td><td>Tree Planting Drive</td><td>Botany</td><td>Dr. P. Subramanyam</td><td>Dr. V. Saleem Basha, Principal</td><td><span class="badge badge-ext">40</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title ext-title"><i class="fa fa-recycle"></i> SASA Activities (Selected)</div>
+  <div class="table-card">
+    <table>
+      <thead class="ext-head"><tr><th>S.No</th><th>Date</th><th>Activity</th><th>Department</th><th>Incharge</th><th>Resource Person</th></tr></thead>
+      <tbody class="ext-body">
+        <tr><td>1</td><td>15-02-2025</td><td>SASA — Source-Resource</td><td>Physics</td><td>Dr. L. Raja Mohan Reddy</td><td>Dr. V. Saleem Basha, Principal</td></tr>
+        <tr><td>2</td><td>19-07-2025</td><td>Plastic Pollution and Sustainable Alternatives</td><td>Computer Science</td><td>A. Haritha</td><td>Dr. M. V. Suresh Babu, GDCM, Kadapa</td></tr>
+        <tr><td>3</td><td>19-07-2025</td><td>SASA — Clean and Green Campus</td><td>History / Physics</td><td>Dr. M. Guru Mohan Reddy</td><td>Staff and Students</td></tr>
+        <tr><td>4</td><td>23-08-2025</td><td>Mon-Soon Hygiene</td><td>Physics</td><td>Dr. L. Raja Mohan Reddy</td><td>Dr. L. Raja Mohan Reddy</td></tr>
+        <tr><td>5</td><td>20-09-2025</td><td>Green AP</td><td>Physics</td><td>Dr. L. Raja Mohan Reddy</td><td>Dr. V. Saleem Basha, Principal</td></tr>
+        <tr><td>6</td><td>18-10-2025</td><td>Clean Air</td><td>Physics / Bio-Technology</td><td>Dr. L. Raja Mohan Reddy</td><td>Dr. V. Saleem Basha, Principal</td></tr>
+        <tr><td>7</td><td>13-11-2025</td><td>Awareness Program on Personal &amp; Community Hygiene</td><td>NSS / SASA</td><td>Dr. V. Saleem Basha, Dr. G. Vijaya Lakshmi Devi, Dr. L. Raja Mohan Reddy, Dr. P. V. Subbareddy</td><td>Dr. M. Raja Sekhar Reddy, MDS, Ex-Asst. Prof., RIMS</td></tr>
+        <tr><td>8</td><td>15-11-2025</td><td>Personal &amp; Community Hygiene</td><td>Physics</td><td>Dr. L. Raja Mohan Reddy</td><td>Dr. V. Saleem Basha, Principal</td></tr>
+        <tr><td>9</td><td>20-12-2025</td><td>Opportunities in Environment</td><td>Physics</td><td>Dr. L. Raja Mohan Reddy</td><td>Dr. V. Saleem Basha, Principal</td></tr>
+        <tr><td>10</td><td>20-01-2026</td><td>Zero Gap Sanitation Andhra Program</td><td>Physics</td><td>Dr. L. Raja Mohan Reddy</td><td>Dr. V. Saleem Basha, Principal</td></tr>
+        <tr><td>11</td><td>21-02-2026</td><td>Zero Litter Governance</td><td>Physics</td><td>Dr. L. Raja Mohan Reddy</td><td>Dr. V. Saleem Basha, Principal</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title ext-title"><i class="fa fa-vote-yea"></i> Voter Awareness Activities</div>
+  <div class="table-card">
+    <table>
+      <thead class="ext-head"><tr><th>S.No</th><th>Date</th><th>Activity</th><th>Department</th><th>Incharge</th><th>Resource Person</th><th>Participants</th><th>Remarks</th></tr></thead>
+      <tbody class="ext-body">
+        <tr><td>1</td><td>11-07-2025</td><td>Awareness Rally on Voter Enrollment</td><td>NSS</td><td>Dr. P. Sachi Devi</td><td>—</td><td><span class="badge badge-ext">50</span></td><td>Excellent</td></tr>
+        <tr><td>2</td><td>23-01-2026</td><td>National Voters Day</td><td>Political Science</td><td>Dr. P. V. Subbareddy</td><td>Dr. V. Saleem Basha, Principal</td><td><span class="badge badge-ext">60</span></td><td>Good</td></tr>
+        <tr><td>3</td><td>25-01-2026</td><td>National Voters Day — Voter Pledge, Awareness Rally, Quiz Competitions</td><td>Political Science</td><td>Dr. P. V. Subba Reddy</td><td>Dr. V. Saleem Basha, Principal</td><td><span class="badge badge-ext">66</span></td><td>Voter Pledge organized</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title ext-title"><i class="fa fa-hand-holding-heart"></i> Social Service Activities</div>
+  <div class="table-card">
+    <table>
+      <thead class="ext-head"><tr><th>S.No</th><th>Date</th><th>Activity</th><th>Department</th><th>Incharge</th><th>Participants</th><th>Remarks</th></tr></thead>
+      <tbody class="ext-body">
+        <tr><td>1</td><td>11-03-2025</td><td>Work in Old Age Home</td><td>NSS</td><td>Dr. P. Sachi Devi</td><td><span class="badge badge-ext">50</span></td><td>Excellent</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══ GRAPHICAL INSIGHTS ══ -->
+<div class="tab-panel" id="tab-insights">
+  <div class="section-title"><i class="fa fa-chart-bar"></i> Graphical Insights — Activity Analytics 2025-26</div>
+
+  <div class="grid-3">
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--iqac)"></span> IQAC Activity Types</h3>
+      <canvas id="iqacTypeBar" height="240"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--ext)"></span> Extension Activity Categories</h3>
+      <canvas id="extCatDonut" height="240"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--royal)"></span> IQAC Participant Count by Activity</h3>
+      <canvas id="iqacParticipantBar" height="240"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--royal)"></span> College Activities — Month-wise Distribution</h3>
+      <canvas id="colMonthBar" height="260"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--green)"></span> Department-wise Activity Share</h3>
+      <canvas id="deptDonut" height="260"></canvas>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--teal)"></span> SASA Theme Distribution</h3>
+      <canvas id="sasaBar" height="220"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3><span class="dot" style="background:var(--orange)"></span> Overall Activities — Source Breakdown</h3>
+      <canvas id="sourceDonut" height="220"></canvas>
+    </div>
+  </div>
+
+  <!-- Progress Summary -->
+  <div class="chart-card" style="margin-bottom:22px;">
+    <h3><span class="dot" style="background:var(--purple)"></span> IQAC Programme Progress — 2025-26</h3>
+    <div class="progress-list" style="margin-top:12px;">
+      <div><div class="progress-header"><span class="progress-label">FDPs / Faculty Development Programmes</span><span class="progress-val" style="color:var(--iqac)">6 / 6 completed</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--iqac)" data-w="100"></div></div></div>
+      <div><div class="progress-header"><span class="progress-label">National / International Seminars</span><span class="progress-val" style="color:var(--royal)">3 / 3 completed</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--royal)" data-w="100"></div></div></div>
+      <div><div class="progress-header"><span class="progress-label">Institutional Submissions (AADPI, ASAR, AISHE)</span><span class="progress-val" style="color:var(--green)">3 / 3 submitted</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--green)" data-w="100"></div></div></div>
+      <div><div class="progress-header"><span class="progress-label">Career Guidance / Conference</span><span class="progress-val" style="color:var(--orange)">2 activities</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--orange)" data-w="70"></div></div></div>
+      <div><div class="progress-header"><span class="progress-label">Skill / PM USHA Activities</span><span class="progress-val" style="color:var(--teal)">2 activities</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--teal)" data-w="60"></div></div></div>
+      <div><div class="progress-header"><span class="progress-label">Students Induction Programme</span><span class="progress-val" style="color:var(--navy)">500 participants</span></div><div class="progress-bar"><div class="progress-fill" style="background:var(--navy)" data-w="80"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TIMELINE ══ -->
+<div class="tab-panel" id="tab-timeline">
+  <div class="section-title"><i class="fa fa-timeline"></i> Activity Timeline — 2025-26 Academic Year</div>
+
+  <div class="legend-row">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--iqac)"></div> IQAC Activity</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--royal)"></div> College Activity</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--ext)"></div> Extension Activity</div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-star"></i></div><div class="tl-content"><div class="tl-date">24 June 2025</div><h4>IQAC — Training on Fostering Adaptability in 21st Century Teaching</h4><p>Resource: Sri. G.L.N. Prasad | All Staff</p></div></div>
+    <div class="tl-item"><div class="tl-dot ext-dot"><i class="fa fa-globe"></i></div><div class="tl-content"><div class="tl-date">21 June 2025</div><h4>International Yoga Day Celebrations — NSS</h4><p>100 participants | Dr. Sachi Devi P</p></div></div>
+    <div class="tl-item"><div class="tl-dot col-dot"><i class="fa fa-flask"></i></div><div class="tl-content"><div class="tl-date">25 May 2025</div><h4>Seminar on Drug Free India — Chemistry</h4><p>66 participants | Dr. K. Naga Muni Reddy</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-star"></i></div><div class="tl-content"><div class="tl-date">08 July 2025</div><h4>IQAC — National Level Workshop on Integrating AI Tools in Education</h4><p>Resource: Dr. T. Samuel David Raj | Faculty &amp; Students</p></div></div>
+    <div class="tl-item"><div class="tl-dot col-dot"><i class="fa fa-book"></i></div><div class="tl-content"><div class="tl-date">11 July 2025</div><h4>World Population Day — Economics</h4><p>50 participants | Dr. G. Vijaya Lakshmi Devi</p></div></div>
+    <div class="tl-item"><div class="tl-dot col-dot"><i class="fa fa-shield-halved"></i></div><div class="tl-content"><div class="tl-date">18 June 2025</div><h4>Workshop on Cyber Security — Computer Science</h4><p>120 participants | A. Haritha</p></div></div>
+    <div class="tl-item"><div class="tl-dot ext-dot"><i class="fa fa-tree"></i></div><div class="tl-content"><div class="tl-date">18 August 2025</div><h4>Tree Planting Drive — Botany</h4><p>40 participants | Dr. P. Subramanyam</p></div></div>
+    <div class="tl-item"><div class="tl-dot col-dot"><i class="fa fa-flag"></i></div><div class="tl-content"><div class="tl-date">13 August 2025</div><h4>Har Ghar Tiranga Rally — NSS</h4><p>100 participants | Dr. Sachi Devi P</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-star"></i></div><div class="tl-content"><div class="tl-date">September 2025</div><h4>IQAC — National Seminar on Intellectual Property Rights (IPR)</h4><p>Resource: Lt Dr. G. Ranganatham; Dr. G. Rajasekhar | Faculty &amp; Students</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-star"></i></div><div class="tl-content"><div class="tl-date">13-17 Oct 2025 (5 Days)</div><h4>IQAC &amp; ACT Academy — 5-Day National Level FDP (Virtual)</h4><p>250 participants | Resource: Dr. Sujatha Gaddam</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-graduation-cap"></i></div><div class="tl-content"><div class="tl-date">14-18 October 2025</div><h4>Students Induction Programme (SIP)</h4><p>500 students | Dr. K. Prakash Narayana Reddy &amp; Sri V. Kumar</p></div></div>
+    <div class="tl-item"><div class="tl-dot col-dot"><i class="fa fa-receipt"></i></div><div class="tl-content"><div class="tl-date">06 October 2025</div><h4>GST 2.0 — Super GST, Super Savings — Commerce</h4><p>75 participants | Sri Leeladhar Sandaluru, GST Inspector</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-star"></i></div><div class="tl-content"><div class="tl-date">October 2025 (5 Days)</div><h4>IQAC — FDP on Integrating IKS in Education &amp; Sustainable Sciences</h4><p>250+ participants | Multiple National Experts</p></div></div>
+    <div class="tl-item"><div class="tl-dot ext-dot"><i class="fa fa-heartbeat"></i></div><div class="tl-content"><div class="tl-date">19 November 2025</div><h4>Mental Health Counselling — Career Guidance Cell</h4><p>200 participants | O. V. Reddy, Psychiatrist</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-trophy"></i></div><div class="tl-content"><div class="tl-date">November 2025</div><h4>IQAC — Understanding NIRF &amp; NAAC Frameworks</h4><p>Chief Guest: Bellamkonda Raja Shekhar Garu, V-C, YVU | All Staff &amp; Students</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-computer"></i></div><div class="tl-content"><div class="tl-date">08-12 December 2025</div><h4>IQAC — FDP on Quantum Computing with EXCEL R</h4><p>300 participants | EXCEL R Resource Persons</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-globe"></i></div><div class="tl-content"><div class="tl-date">December 2025</div><h4>IQAC — International Seminar on Mathematics, AI &amp; India's Economic Future (Hybrid)</h4><p>200+ participants | Prof. Srinivasa Rao Pentyala (IIT Dhanbad), Prof. Ramana Murthy M (Virginia State, USA)</p></div></div>
+    <div class="tl-item"><div class="tl-dot col-dot"><i class="fa fa-calculator"></i></div><div class="tl-content"><div class="tl-date">22 December 2025</div><h4>National Mathematics Day</h4><p>50-60 participants | Dr. B. Swaroopa / P. Gurivi Reddy</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-star"></i></div><div class="tl-content"><div class="tl-date">29 December 2025</div><h4>IQAC — Career Guidance &amp; Resume Building; Conference on Career Guidance</h4><p>110 + 250 participants | Axis Point &amp; A. Suresh Kumar</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-scissors"></i></div><div class="tl-content"><div class="tl-date">03 January 2026</div><h4>IQAC — PM USHA Skill Training on Tailoring</h4><p>100 participants | Axis Point, GDC Vempalli</p></div></div>
+    <div class="tl-item"><div class="tl-dot ext-dot"><i class="fa fa-vote-yea"></i></div><div class="tl-content"><div class="tl-date">23-25 January 2026</div><h4>National Voters Day Celebrations</h4><p>60-66 participants | Dr. P. V. Subbareddy</p></div></div>
+    <div class="tl-item"><div class="tl-dot iqac-dot"><i class="fa fa-robot"></i></div><div class="tl-content"><div class="tl-date">20 Jan – 06 Feb 2026</div><h4>IQAC — PM USHA: Gen AI Tools &amp; Prompt Engineering (Inaugural + Valedictory)</h4><p>150 participants each session | K. Tejeswar Subhash Changra Bose</p></div></div>
+    <div class="tl-item"><div class="tl-dot ext-dot"><i class="fa fa-heartbeat"></i></div><div class="tl-content"><div class="tl-date">29 January 2026</div><h4>Mental Health &amp; Well Being Awareness — Women Empowerment Cell</h4><p>40 participants | Dr. O. V. Reddy, Psychiatrist</p></div></div>
+    <div class="tl-item"><div class="tl-dot col-dot"><i class="fa fa-piggy-bank"></i></div><div class="tl-content"><div class="tl-date">28 February 2026</div><h4>Financial Literacy Programme (CCE &amp; AMFI &amp; IIM Visakhapatnam)</h4><p>405 participants | Commerce Department</p></div></div>
+    <div class="tl-item"><div class="tl-dot col-dot"><i class="fa fa-microscope"></i></div><div class="tl-content"><div class="tl-date">04 March 2026</div><h4>International Seminar — Mathematics &amp; AI: Shaping India's Economic Future</h4><p>100 participants | History &amp; Mathematics Dept.</p></div></div>
+    <div class="tl-item"><div class="tl-dot ext-dot"><i class="fa fa-female"></i></div><div class="tl-content"><div class="tl-date">06-08 March 2026</div><h4>International Women's Day Celebrations — Multiple Departments</h4><p>Various events | WEC, NSS, Physics, Botany departments</p></div></div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<div class="footer">
+  🏛️ <strong>SKR &amp; SKR Govt. College for Women (A), Kadapa</strong> ·
+  <a href="https://skrgdcwakdp.edu.in/" target="_blank">skrgdcwakdp.edu.in</a> ·
+  skrgdcwakdp@gmail.com · Ph: 9491355579 &nbsp;|&nbsp;
+  Dashboard prepared for <strong>AAA 2025-26</strong> · Presented by Dr. V. Saleem Basha, Principal
+  <div class="dev-line">
+    © <span id="copy-year"></span> &nbsp;|&nbsp;
+    💻 Designed &amp; Developed by &nbsp;<strong>Dr. C. V. Krishnaveni</strong>,
+    Lecturer in Computer Science &amp; IQAC Coordinator,
+    SKR &amp; SKR Govt. College for Women (A), Kadapa, Andhra Pradesh, India.
+    &nbsp;|&nbsp; All Rights Reserved.
+  </div>
+</div>
+
+<script>
+// ── DATES
+document.getElementById('today-date').textContent = new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'long',year:'numeric'});
+document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+// ── TAB SWITCHING
+function showTab(id, el) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  el.classList.add('active');
+  if (!window._drawn) window._drawn = {};
+  if (!window._drawn[id]) { window._drawn[id] = true; setTimeout(() => drawChartsFor(id), 80); }
+  if (id === 'overview') animateCounters();
+}
+
+// ── COUNTER ANIMATION
+function animCount(id, target, dur) {
+  const el = document.getElementById(id); if (!el) return;
+  let v = 0, step = target / (dur / 16);
+  const t = setInterval(() => {
+    v += step;
+    if (v >= target) { v = target; clearInterval(t); }
+    el.textContent = Math.floor(v).toLocaleString('en-IN');
+  }, 16);
+}
+
+function animateCounters() {
+  animCount('cnt-total', 450, 1000);
+  animCount('cnt-iqac', 17, 800);
+  animCount('cnt-college', 380, 1200);
+  animCount('cnt-ext', 53, 900);
+}
+
+// ── ANIMATE PROGRESS BARS
+function animateProgressBars() {
+  document.querySelectorAll('.progress-fill').forEach(el => {
+    const w = el.getAttribute('data-w');
+    if (w) setTimeout(() => el.style.width = w + '%', 200);
+  });
+}
+
+// ── PALETTE
+const P = ['#1565C0','#00838F','#F57C00','#2E7D32','#7B1FA2','#D81B60','#00ACC1','#FFB300','#C62828','#0D1B4B','#00695C','#E65100'];
+
+// ── CANVAS HELPER
+function G(id) {
+  const c = document.getElementById(id); if (!c) return null;
+  const ctx = c.getContext('2d');
+  const w = c.parentElement.clientWidth - 36;
+  c.width = w > 50 ? w : 400;
+  c.height = parseInt(c.getAttribute('height')) || 220;
+  ctx.clearRect(0, 0, c.width, c.height);
+  return { ctx, w: c.width, h: c.height };
+}
+
+// ── BAR CHART
+function bar(id, labels, datasets, opts={}) {
+  const g = G(id); if (!g) return;
+  const { ctx, w, h } = g;
+  const pd = { t: 30, r: 16, b: 50, l: 52 };
+  const cw = w - pd.l - pd.r, ch = h - pd.t - pd.b;
+  const multi = datasets.length > 1;
+  const n = labels.length, ds = datasets.length;
+  const maxV = Math.max(...datasets.flatMap(d => d.data), 1) * 1.15;
+  const bw = multi ? (cw/n)*0.72/ds : (cw/n)*0.55;
+
+  for (let i = 0; i <= 4; i++) {
+    const y = pd.t + ch - (i/4)*ch;
+    ctx.strokeStyle='#E3EAF8'; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(pd.l,y); ctx.lineTo(pd.l+cw,y); ctx.stroke();
+    ctx.fillStyle='#78909C'; ctx.font='10px Segoe UI,Arial'; ctx.textAlign='right';
+    ctx.fillText(Math.round((i/4)*maxV), pd.l-5, y+4);
+  }
+
+  datasets.forEach((d, di) => {
+    d.data.forEach((v, i) => {
+      const bh = (v/maxV)*ch;
+      const x = multi
+        ? pd.l + (i/n)*cw + (cw/n)*0.14 + di*(bw+2)
+        : pd.l + (i/n)*cw + ((cw/n)-bw)/2;
+      const y = pd.t + ch - bh;
+      ctx.fillStyle = d.color || P[di%P.length];
+      ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(x, y, bw, bh, 3); else ctx.rect(x,y,bw,bh);
+      ctx.fill();
+      if (v > 0) {
+        ctx.fillStyle='#37474F'; ctx.font='bold 9px Segoe UI,Arial'; ctx.textAlign='center';
+        ctx.fillText(v, x+bw/2, y-3);
+      }
+    });
+  });
+
+  ctx.fillStyle='#546E7A'; ctx.font='10px Segoe UI,Arial'; ctx.textAlign='center';
+  labels.forEach((l,i) => {
+    const x = pd.l + (i/n)*cw + (cw/n)/2;
+    const lines = l.split('\n');
+    lines.forEach((line,li) => ctx.fillText(line, x, pd.t+ch+14+li*12));
+  });
+
+  if (multi) {
+    let lx = pd.l;
+    datasets.forEach((d,di) => {
+      ctx.fillStyle = d.color||P[di%P.length]; ctx.fillRect(lx,8,9,9);
+      ctx.fillStyle='#37474F'; ctx.font='10px Segoe UI,Arial'; ctx.textAlign='left';
+      ctx.fillText(d.label||'', lx+13, 17);
+      lx += ctx.measureText(d.label||'').width + 28;
+    });
+  }
+}
+
+// ── DONUT CHART
+function donut(id, labels, data, colors, cText) {
+  const g = G(id); if (!g) return;
+  const { ctx, w, h } = g;
+  const cx = w*0.38, cy = h/2;
+  const ro = Math.min(cx,cy)*0.82, ri = ro*0.55;
+  const total = data.reduce((a,b)=>a+b,0);
+  let start = -Math.PI/2;
+  data.forEach((v,i) => {
+    const a = (v/total)*2*Math.PI;
+    ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,ro,start,start+a);
+    ctx.arc(cx,cy,ri,start+a,start,true); ctx.closePath();
+    ctx.fillStyle = colors[i%colors.length]; ctx.fill();
+    ctx.strokeStyle='#fff'; ctx.lineWidth=3; ctx.stroke();
+    start += a;
+  });
+  ctx.fillStyle='#1A237E'; ctx.font='bold 13px Segoe UI,Arial'; ctx.textAlign='center';
+  ctx.fillText(cText||total, cx, cy+5);
+  const lx = w*0.80;
+  let ly = h/2 - (labels.length*20)/2;
+  labels.forEach((l,i) => {
+    const pct = Math.round(data[i]/total*100);
+    ctx.fillStyle=colors[i%colors.length]; ctx.fillRect(lx,ly,11,11);
+    ctx.fillStyle='#37474F'; ctx.font='10.5px Segoe UI,Arial'; ctx.textAlign='left';
+    ctx.fillText(l+' ('+pct+'%)', lx+15, ly+10);
+    ly += 22;
+  });
+}
+
+// ── HORIZONTAL BAR
+function hbar(id, labels, data, colors) {
+  const g = G(id); if (!g) return;
+  const { ctx, w, h } = g;
+  const pd = {t:10,r:50,b:10,l:120};
+  const cw = w - pd.l - pd.r, ch = h - pd.t - pd.b;
+  const n = labels.length;
+  const maxV = Math.max(...data, 1) * 1.15;
+  const bh = (ch/n)*0.55;
+
+  labels.forEach((l,i) => {
+    const bw = (data[i]/maxV)*cw;
+    const y = pd.t + (i/n)*ch + ((ch/n)-bh)/2;
+    ctx.fillStyle = colors[i%P.length];
+    ctx.beginPath();
+    if (ctx.roundRect) ctx.roundRect(pd.l, y, bw, bh, 4); else ctx.rect(pd.l,y,bw,bh);
+    ctx.fill();
+    ctx.fillStyle='#37474F'; ctx.font='bold 10px Segoe UI,Arial'; ctx.textAlign='left';
+    ctx.fillText(data[i], pd.l+bw+5, y+bh/2+4);
+    ctx.fillStyle='#546E7A'; ctx.font='11px Segoe UI,Arial'; ctx.textAlign='right';
+    ctx.fillText(l, pd.l-6, y+bh/2+4);
+  });
+}
+
+// ── DRAW ALL CHARTS
+function drawChartsFor(tab) {
+  if (tab === 'overview') {
+    animateCounters();
+    animateProgressBars();
+    donut('overviewDonut',
+      ['IQAC (17)','College (380+)','Extension (53)'],
+      [17,380,53],
+      ['#7B1FA2','#1565C0','#00695C'],
+      '450+');
+    bar('monthBarChart',
+      ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'],
+      [{label:'Activities',data:[18,42,35,28,38,30,32,25,40,22],color:'#1565C0'}]);
+    donut('typeDonut',
+      ['Seminars/Workshops','Guest Lectures','NSS/NCC/Eco','SASA/Env.','Career Guidance','BOS/Academic'],
+      [45,60,55,42,18,30],
+      ['#7B1FA2','#1565C0','#2E7D32','#00695C','#F57C00','#00838F'],
+      'Types');
+  }
+
+  if (tab === 'insights') {
+    animateProgressBars();
+    bar('iqacTypeBar',
+      ['FDP','Workshop','Seminar','Career\nGuidance','Skill\nTraining','Submissions','SIP'],
+      [{data:[6,1,3,2,2,3,1],color:'#7B1FA2'}]);
+    donut('extCatDonut',
+      ['Health/Medical (8)','SASA (21)','Voter Aware. (3)','Social Service (1)','Tree Plant. (1)'],
+      [8,21,3,1,1],
+      ['#D81B60','#00695C','#1565C0','#F57C00','#2E7D32'],
+      'Ext Acts');
+    bar('iqacParticipantBar',
+      ['SIP','FDP-IKS','FDP-Quantum\nComp.','Career\nConference','NIRF-NAAC\nWorkshop','AI & Prompt\nEng.','FDP-ACT\nAcademy'],
+      [{data:[500,300,300,250,200,150,250],color:'#7B1FA2'}]);
+    bar('colMonthBar',
+      ['Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'],
+      [
+        {label:'IQAC',data:[2,3,1,2,4,2,3,2,2,0],color:'#7B1FA2'},
+        {label:'College',data:[16,39,34,26,34,28,29,23,38,22],color:'#1565C0'}
+      ]);
+    donut('deptDonut',
+      ['Physics/SASA','NSS','Botany','Commerce','IQAC','Comp.Sci.','History','Chemistry','Others'],
+      [42,38,35,28,17,22,20,18,30],
+      P,
+      'Depts');
+    bar('sasaBar',
+      ['Hygiene','Plastic\nPollution','Zero Litter','Clean Air','Green AP','Zero Gap\nSanitation','Yogandhra','SASA-Source\nResource'],
+      [{data:[3,3,2,2,2,2,2,2],color:'#00695C'}]);
+    donut('sourceDonut',
+      ['College Depts (380+)','IQAC (17)','Extension (53)'],
+      [380,17,53],
+      ['#1565C0','#7B1FA2','#00695C'],
+      '450+');
+  }
+}
+
+// ── FILTER COLLEGE TABLE
+function filterColTable() {
+  const q = document.getElementById('colSearch').value.toLowerCase();
+  document.querySelectorAll('#colTable tbody tr').forEach(row => {
+    row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+
+function filterCol(cat, el) {
+  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('#colTable tbody tr').forEach(row => {
+    if (cat === 'all') { row.style.display = ''; return; }
+    const rowCat = row.getAttribute('data-cat') || '';
+    row.style.display = rowCat.toLowerCase().includes(cat.toLowerCase()) ? '' : 'none';
+  });
+}
+
+// ── INIT
+window.onload = function() {
+  setTimeout(()=>{ drawChartsFor('overview'); }, 100);
+};
+</script>
+</body>
+</html>
