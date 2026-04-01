@@ -5,7 +5,7 @@
 ![College Banner](https://img.shields.io/badge/SKR%20%26%20SKR%20GCW(A)-Kadapa-0D1B4B?style=for-the-badge&logo=university&logoColor=FFB300)
 ![NAAC](https://img.shields.io/badge/NAAC-Accredited-2E7D32?style=for-the-badge&logoColor=white)
 ![Autonomous](https://img.shields.io/badge/Autonomous-Since%202016-1565C0?style=for-the-badge&logoColor=white)
-![NIRF](https://img.shields.io/badge/NIRF-7th%20in%20AP%20State-F57C00?style=for-the-badge&logoColor=white)
+![EduWorld](https://img.shields.io/badge/Rank-35th%20in%20AP%20State-F57C00?style=for-the-badge&logoColor=white)
 ![AAA](https://img.shields.io/badge/AAA-2025--26-D81B60?style=for-the-badge&logoColor=white)
 
 <br/>
@@ -249,13 +249,13 @@ http://localhost:8080/index(1).html
 | 🎓 Affiliation | Permanently Affiliated |
 | ✅ Autonomy | Granted 2016 |
 | 🏆 NAAC | 3rd Cycle Accredited (July 2023) |
-| 📊 NIRF 2024-25 | 7th in AP · 31st National · 451st Worldwide |
+| 📊 EduWorld 2025-26 | 35th in AP |
 | 📚 Library | 26,062 Books · 6,792 E-Journals |
 | 👩‍🎓 Enrolment | 1,662 Students |
 | 🤝 MoUs | 30 Active |
 | 🌿 Green | Green Audit Certified |
 
-🌐 [skrgdcwakdp.edu.in](https://skrgdcwakdp.edu.in/) · 📧 skrgdcwakdp@gmail.com · 📞 9491355579
+🌐 [skrgdcwakdp.edu.in](https://skrgdcwakdp.edu.in/) · 📧 iqac.nirf.gdcw.kdp@gmail.com · 📞 9491355579
 
 </div>
 
